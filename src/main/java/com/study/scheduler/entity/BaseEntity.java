@@ -1,4 +1,4 @@
 package com.study.scheduler.entity;
 
-public class BaseEntity {
+public abstract class BaseEntity {
 }
