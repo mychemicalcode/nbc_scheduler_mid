@@ -38,7 +38,7 @@ public class UserController {
         return new ResponseEntity<>(userResponseDto, HttpStatus.OK);
     }
 
-    @PathVariable("{/id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<Void> updatePassword(
             @PathVariable Long id,
             @RequestBody UpdatePasswordRequestDto requestDto

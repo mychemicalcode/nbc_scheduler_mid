@@ -40,7 +40,7 @@ public class UserService {
 
         User findUser = optionalUser.get();
 
-        return new UserResponseDto(findUser.getUsername(), findUser.getPassword(), findUser.getEmail());
+        return new UserResponseDto(findUser.getUsername(), findUser.getEmail());
     }
 
     @Transactional

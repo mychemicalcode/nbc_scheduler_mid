@@ -43,7 +43,7 @@ public class SchedulerService {
         Scheduler findScheduler = schedulerRepository.findByIdOrElseThrow(id);
         User writer = findScheduler.getUser();
 
-        return new SchedulerWithEmailResponseDto(findScheduler.getTitle(), findScherduler.gerContent(), writer.getEmail());
+        return new SchedulerWithEmailResponseDto(findScheduler.getTitle(), findScheduler.getContents(), writer.getEmail());
     }
 
     public void delete(Long id) {

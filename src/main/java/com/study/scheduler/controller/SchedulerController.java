@@ -6,6 +6,7 @@ import com.study.scheduler.dto.SchedulerResponseDto;
 import com.study.scheduler.dto.SchedulerWithEmailResponseDto;
 import com.study.scheduler.entity.Scheduler;
 import com.study.scheduler.service.SchedulerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/schedulers")
+@RequiredArgsConstructor
 public class SchedulerController {
 
     private final SchedulerService schedulerService;
