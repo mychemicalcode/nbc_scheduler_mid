@@ -2,7 +2,9 @@ package com.study.scheduler.entity;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
+@Getter
 @Entity
 @Table(name = "user")
 public class User extends BaseEntity{
@@ -10,7 +12,8 @@ public class User extends BaseEntity{
     // 유저 아이디
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "user_id")
+    private Long userid;
 
     // 유저명
     @Column(nullable = false, unique = true)
@@ -20,7 +23,20 @@ public class User extends BaseEntity{
     @Column(nullable = false)
     private String email;
 
-    private Integer age;
+    // 생성자
+
+
+    public User() {
+    }
+
+    public User(String username, String email) {
+//        this.userid = user;
+        this.username = username;
+        this.email = email;
+    }
+
+
+//    private Integer age;
 
 //    // 작성일
 //    @Temporal(TemporalType.TIMESTAMP)
