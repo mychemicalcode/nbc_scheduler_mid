@@ -18,8 +18,11 @@ public class User extends BaseEntity{
     @Column(nullable = false, unique = true)
     private String username;
 
-    // 유저 이메일
+    // 유저 비밀번호
     @Column(nullable = false)
+    private String password;
+
+    // 유저 이메일
     private String email;
 
 
@@ -27,10 +30,14 @@ public class User extends BaseEntity{
     public User() {
     }
 
-    public User(String username, String email) {
-//        this.userid = user;
+    public User(String username, String password, String email) {
         this.username = username;
+        this.password = password;
         this.email = email;
+    }
+
+    public void updatePassword(String password) {
+        this.password = password;
     }
 
 
