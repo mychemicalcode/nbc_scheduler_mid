@@ -12,8 +12,7 @@ public class User extends BaseEntity{
     // 유저 아이디
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
-    private Long userid;
+    private Long id;
 
     // 유저명
     @Column(nullable = false, unique = true)
@@ -23,9 +22,8 @@ public class User extends BaseEntity{
     @Column(nullable = false)
     private String email;
 
+
     // 생성자
-
-
     public User() {
     }
 

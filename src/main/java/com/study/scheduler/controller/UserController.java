@@ -1,5 +1,6 @@
 package com.study.scheduler.controller;
 
+
 import com.study.scheduler.dto.SignUpRequestDto;
 import com.study.scheduler.dto.SignUpResponseDto;
 import com.study.scheduler.service.UserService;
@@ -14,15 +15,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
-public class MemberController {
+public class UserController {
 
     private final UserService userService;
 
-    @PostMapping
-    public ResponseEntity<SignUpRequestDto> sighUp(@RequestBody SignUpRequestDto requestDto) {
+    @PostMapping("/signup")
+    public ResponseEntity<SignUpResponseDto> signUp(@RequestBody SignUpRequestDto requestDto) {
 
-        SignUpResponseDto signUpResponseDto = userService.signUp(requestDto.getUsername(), requestDto.getEmail())
+        SignUpResponseDto signUpResponseDto = userService.signUp(requestDto.getUsername(), requestDto.getEmail() );
 
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>(signUpResponseDto, HttpStatus.CREATED);
     }
+
+
+
 }
